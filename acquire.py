@@ -94,7 +94,6 @@ def make_article_df(card_df):
 
 ####### functions created in data acquisition exercises #########
 
-
 def get_blog_info(url):
     '''
     Takes in the url for article and gets info on the article and creates dictionary of the info
@@ -117,7 +116,7 @@ def get_blog(url_list):
     art_dict_list = []
     #iterate through list of article urls and get info for each article
     for url in url_list:
-        art_info = get_blog_article_info(url)
+        art_info = get_blog_info(url)
         art_dict_list.append(art_info)
     # use pandas to make a df of the article dictionaries
     article_df = pd.DataFrame(art_dict_list)
