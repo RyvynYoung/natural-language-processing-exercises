@@ -122,6 +122,6 @@ def prep_data(df, column, extra_words=[], exclude_words=[]):
                             .apply(remove_stopwords, 
                                    extra_words=extra_words, 
                                    exclude_words=exclude_words)\
-                            .apply(stem)
+                            .apply(lemmatize)
     # return only exercise requested columns
     return df[['title', column, 'clean', 'stemmed', 'lemmatized']]
