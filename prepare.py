@@ -93,7 +93,7 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
     
     df['lemmatized'] = df[column].apply(basic_clean).apply(lemmatize)
     
-    return df[['title', column, 'stemmed', 'lemmatized', 'clean']]
+    return df[['topic', 'title', column, 'stemmed', 'lemmatized', 'clean']]
 
 ###### my version
 def prep_data(df, column, extra_words=[], exclude_words=[]):
@@ -123,5 +123,5 @@ def prep_data(df, column, extra_words=[], exclude_words=[]):
                                    extra_words=extra_words, 
                                    exclude_words=exclude_words)\
                             .apply(lemmatize)
-    # return only exercise requested columns
+    
     return df[['title', column, 'clean', 'stemmed', 'lemmatized']]
